@@ -1,9 +1,9 @@
 # Xenonium Engine
 
 This is my attempt at making an game engine from scratch using tutorials from <br>
-[The Cherno Game Engine Series](https://www.youtube.com/watch?v=sULV3aB2qeU), 
+[The Cherno Game Engine Series](https://www.youtube.com/watch?v=JxIZbV_XjAs&list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT), 
 [Learn OpenGL](https://learnopengl.com/) and 
-[RasterTek OpenGL tutorials](https://www.rastertek.com/) <br>
+[RasterTek OpenGL tutorials](https://www.rastertek.com/). <br>
 <br>
 This project is my side hobby, so don't expect anything really big or complex.
 
