@@ -3,6 +3,7 @@
 #include "XenoniumAPI.hpp"
 
 #include <string>
+#include <chrono>
 
 namespace Xenonium {
 	struct XENONIUM_API GameData {
@@ -11,11 +12,17 @@ namespace Xenonium {
 
 	class XENONIUM_API Game {
 	public:
+		int fps = 0;
+	public:
 		void Initialize();
 		void Run();
 
-		void Exit();
-		void Crash(std::string reason);
+		// m_shouldclose = true;
+		void Stop();
+		void Crash(const std::string& reason);
+		void Stall(std::chrono::milliseconds duration);
+
+		void SetFramerate(int fps);
 
 		int GetReturnCode();
 	protected:
@@ -26,7 +33,26 @@ namespace Xenonium {
 		// The first function called when game is exiting
 		virtual void GameExit(const GameData& data);
 	private:
-		bool m_initialized;
+		void Exit();
+
+		void HandleCrash();
+	private:
+		GameData m_data = {
+			0.0f,
+			//m_window.get()
+		};
+
+		bool m_initialized = false;
+
+		std::chrono::nanoseconds m_frametime = std::chrono::nanoseconds(1000000000LL) / 60;
+
+		bool m_running = false;
+		bool m_shouldExit = false;
+
+		bool m_crashed = false;
+		std::string m_crashReason = "";
+
+		int m_returnCode = 0;
 	};
 
 	Game* CreateGame();

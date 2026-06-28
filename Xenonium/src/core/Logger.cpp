@@ -42,7 +42,7 @@ namespace Xenonium {
 			std::string time = GetTime();
 			std::string l = GetLoggerLevel(level);
 
-			std::cout << time << l << " " << message;
+			std::cout << time << l << " " << message << "\n";
 		}
 
 		void Fatal(const std::string& message) {

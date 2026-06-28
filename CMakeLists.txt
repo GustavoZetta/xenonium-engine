@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.0.0)
-project(VenusTest VERSION 1.0 LANGUAGES CXX C)
+project(XenoniumTests VERSION 1.0 LANGUAGES CXX C)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/Build")
 
