@@ -1,10 +1,11 @@
 # Xenonium Engine
 
-This is my attempt at making an game engine from scratch using tutorials from 
+This is my attempt at making an game engine from scratch using tutorials from <br>
 [The Cherno Game Engine Series](https://www.youtube.com/watch?v=sULV3aB2qeU), 
 [Learn OpenGL](https://learnopengl.com/) and 
 [RasterTek OpenGL tutorials](https://www.rastertek.com/) <br>
-This is also my side hobby, so don't expect anything really big or complex.
+<br>
+This project is my side hobby, so don't expect anything really big or complex.
 
 ## Features
 
@@ -29,7 +30,7 @@ The Xenonium Engine uses three main dependencies:
 
 ## Supported Plataforms
 
-The engine is officially supported and tested only on Windows, but it should compile just fine on other plataforms such as Linux and MacOS
+The engine is officially supported and tested only on Windows, but it should compile just fine on other plataforms.
 
 ## Prebuild Binaries
 
