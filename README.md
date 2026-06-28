@@ -10,11 +10,11 @@ This is also my side hobby, so don't expect anything really big or complex.
 
 This is the list of features that I will try to implement in the engine:
 
-- [] Reliable Window and Input System
-- [] 2D Rendering API with support for multiple Graphics APIs
-- [] Entity Component System (ECS)
-- [] Raytraced Audio System
-- [] Event System
+- [X] Reliable Window and Input System
+- [ ] 2D Rendering API with support for multiple Graphics APIs
+- [ ] Entity Component System (ECS)
+- [ ] Raytraced Audio System
+- [ ] Event System
 
 ## How to use
 
