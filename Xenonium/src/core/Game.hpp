@@ -2,12 +2,17 @@
 
 #include "XenoniumAPI.hpp"
 
+#include "window/Window.hpp"
+#include "renderer/Renderer.hpp"
+
 #include <string>
+#include <memory>
 #include <chrono>
 
 namespace Xenonium {
 	struct XENONIUM_API GameData {
 		float deltaTime = 0.0f;
+		Window* window = nullptr;
 	};
 
 	class XENONIUM_API Game {
@@ -37,9 +42,12 @@ namespace Xenonium {
 
 		void HandleCrash();
 	private:
+		std::unique_ptr<Window> m_window = nullptr;
+		std::unique_ptr<I_Renderer> m_renderer = nullptr;
+
 		GameData m_data = {
 			0.0f,
-			//m_window.get()
+			nullptr
 		};
 
 		bool m_initialized = false;

@@ -45,19 +45,19 @@ namespace Xenonium {
 			std::cout << time << l << " " << message << "\n";
 		}
 
-		void Fatal(const std::string& message) {
+		inline void Fatal(const std::string& message) {
 			Log(LoggerLevel::FATAL, message);
 		}
-		void Error(const std::string& message) {
+		inline void Error(const std::string& message) {
 			Log(LoggerLevel::ERROR, message);
 		}
-		void Warn(const std::string& message) {
+		inline void Warn(const std::string& message) {
 			Log(LoggerLevel::WARN, message);
 		}
-		void Info(const std::string& message) {
+		inline void Info(const std::string& message) {
 			Log(LoggerLevel::INFO, message);
 		}
-		void Success(const std::string& message) {
+		inline void Success(const std::string& message) {
 			Log(LoggerLevel::SUCCESS, message);
 		}
 	}

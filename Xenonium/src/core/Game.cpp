@@ -14,9 +14,17 @@ namespace Xenonium {
 		m_initialized = true;
 
 		try {
+			Logger::Info("<Xenonium> Initializing engine...");
+			m_window = std::make_unique<Window>();
+			m_window->Initialize("Game", 640, 360);
+			Logger::Info("<Xenonium> Engine initialized!");
+
 			Logger::Info("<Xenonium> Initializing game...");
 			this->GameInit(m_data);
 			Logger::Info("<Xenonium> Game initialized!");
+
+			Logger::Info("<Xenonium> Showing window...");
+			m_window->SetVisible(true);
 		}
 		catch (std::exception& e) {
 			Logger::Error("<Xenonium> Exception found while initializing engine!");
@@ -32,7 +40,7 @@ namespace Xenonium {
 		try {
 			Logger::Info("<Xenonium> Starting game loop...");
 
-			//std::string windowTitle = m_window->GetTitle();
+			std::string windowTitle = m_window->GetTitle();
 
 			auto lastTime = std::chrono::steady_clock::now();
 
@@ -80,12 +88,10 @@ namespace Xenonium {
 				if (canRender) {
 					float deltaTime = std::chrono::duration<float>(delta).count();
 
-					//m_window->Poll();
+					m_window->Poll();
 
-					//const std::string title = windowTitle + std::string(" - FPS: ") + std::to_string(fps);
-					//m_window->SetTitle(title);
-
-					//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+					const std::string title = windowTitle + std::string(" - FPS: ") + std::to_string(fps);
+					m_window->SetTitle(title);
 
 					m_data.deltaTime = deltaTime;
 					this->GameProcess(m_data);
