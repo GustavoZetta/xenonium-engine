@@ -27,12 +27,12 @@ This is the list of features that I will try to implement in the engine:
 
 ## How to use
 
-See [(link should here, its not)](https://github.com/GustavoZetta/) for a detailed documentation on 
-how to use the engine.
+See [(link should here, its not)](https://github.com/GustavoZetta/xenonium-engine) for a detailed 
+documentation on how to use the engine.
 
 ## Dependencies
 
-The Xenonium Engine uses three main dependencies:
+The Xenonium Engine uses two main dependencies:
 * [GLFW](https://www.glfw.org/)
 * [GLAD](https://glad.dav1d.de/)
 
