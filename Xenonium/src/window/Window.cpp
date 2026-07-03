@@ -23,7 +23,7 @@ namespace Xenonium {
 			throw std::runtime_error("GLFW could not be initialized. \nin line 23 of Window::Initialize(std::string title, int width, int height)");
 			return;
 		}
-		Logger::Info("<Xenonium> Initialized GLFW!");
+		Logger::Success("<Xenonium> Initialized GLFW!");
 
 		glfwDefaultWindowHints();
 
@@ -49,14 +49,7 @@ namespace Xenonium {
 		// Context must come before initializing glad
 		glfwMakeContextCurrent(m_win);
 
-		Logger::Info("<Xenonium> GLFW window created!");
-
-		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-			Logger::Fatal("<Xenonium> Could not initialize GLAD!");
-			throw std::runtime_error("GLAD could not be initialized. \nin line 56 of Window::Initialize(std::string title, int width, int height)");
-			return;
-		}
-		Logger::Info("<Xenonium> Initialized GLAD!");
+		Logger::Success("<Xenonium> GLFW window created!");
 
 		glfwSetWindowUserPointer(m_win, this);
 
@@ -67,7 +60,7 @@ namespace Xenonium {
 
 		s_FramebufferSizeCallback(m_win, m_width, m_height);
 
-		Logger::Success("<Xenonium> Sucessfully initialized window!");
+		Logger::Success("<Xenonium> Initialized window!");
 	}
 
 	void Window::Poll() {
@@ -89,7 +82,8 @@ namespace Xenonium {
 		m_initialized = false;
 		Logger::Info("<Xenonium> Destroying GLFW window...");
 		glfwDestroyWindow(m_win);
-		Logger::Success("<Xenonium> Sucessfully cleaned up window!");
+		Logger::Success("<Xenonium> GLFW window destroyed!");
+		Logger::Success("<Xenonium> Cleaned up window!");
 	}
 
 	GLFWwindow* Window::ID() const {

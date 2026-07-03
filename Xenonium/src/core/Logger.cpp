@@ -15,7 +15,7 @@ namespace Xenonium {
 
 				std::tm* local_time = std::localtime(&c_time);
 
-				std::stringstream ss;
+				std::stringstream ss{};
 				ss << "[" << std::put_time(local_time, "%T") << "]";
 
 				return ss.str();
@@ -43,22 +43,6 @@ namespace Xenonium {
 			std::string l = GetLoggerLevel(level);
 
 			std::cout << time << l << " " << message << "\n";
-		}
-
-		inline void Fatal(const std::string& message) {
-			Log(LoggerLevel::FATAL, message);
-		}
-		inline void Error(const std::string& message) {
-			Log(LoggerLevel::ERROR, message);
-		}
-		inline void Warn(const std::string& message) {
-			Log(LoggerLevel::WARN, message);
-		}
-		inline void Info(const std::string& message) {
-			Log(LoggerLevel::INFO, message);
-		}
-		inline void Success(const std::string& message) {
-			Log(LoggerLevel::SUCCESS, message);
 		}
 	}
 }

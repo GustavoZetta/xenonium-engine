@@ -10,6 +10,8 @@ add_subdirectory(Xenonium)
 add_subdirectory(TestGame)
 
 message(STATUS "-------------------------------------------------")
+message(STATUS "CMake Version: ${CMAKE_VERSION}")
+message(STATUS "Min Version Required: ${CMAKE_MINIMUM_REQUIRED_VERSION}")
 message(STATUS "Compiler: ${CMAKE_CXX_COMPILER}")
 message(STATUS "Version: ${CMAKE_CXX_COMPILER_VERSION}")
 message(STATUS "ID: ${CMAKE_CXX_COMPILER_ID}")

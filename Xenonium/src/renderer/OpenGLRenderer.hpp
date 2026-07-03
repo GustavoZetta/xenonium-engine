@@ -12,12 +12,12 @@ namespace Xenonium {
 		void CleanUp() override;
 
 		void BindTexture(TextureAtlas* atlas) override;
-		void RenderSprite() override;
+		void DrawSprite() override;
 
 		void SetBackgroundColor(float r, float g, float b, float a) override;
 	private:
 		bool m_initialized = false;
 		
-		GLuint 
+		GLuint ScreenVAO = 0;
 	};
 }

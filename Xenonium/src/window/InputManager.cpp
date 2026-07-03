@@ -23,8 +23,8 @@ namespace Xenonium {
 	}
 
 	void InputManager::ProcessInput() {
-		for (int i = 0; i <= GLFW_KEY_LAST; i++) {
-			int action = m_keyboardKeys[i];
+		for (int i = 0; i < GLFW_KEY_LAST; i++) {
+			int action = m_keyboardKeys[i] + 1;
 			KeyState& s = m_keyboardKeysStates[i];
 
 			if (action == GLFW_PRESS || action == GLFW_REPEAT) {
@@ -39,7 +39,7 @@ namespace Xenonium {
 			}
 		}
 
-		for (int i = 0; i <= GLFW_MOUSE_BUTTON_LAST; i++) {
+		for (int i = 0; i < GLFW_MOUSE_BUTTON_LAST; i++) {
 			int action = m_keyboardKeys[i];
 			KeyState& s = m_keyboardKeysStates[i];
 

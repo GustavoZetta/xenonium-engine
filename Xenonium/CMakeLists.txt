@@ -29,12 +29,12 @@ set_target_properties(Xenonium PROPERTIES
     PREFIX ""
 )
 
-target_include_directories(Xenonium PRIVATE dependencies)
+target_include_directories(Xenonium PUBLIC dependencies)
 target_include_directories(Xenonium PUBLIC src)
 
 target_compile_definitions(Xenonium PRIVATE __XENONIUM_DLL)
 
-target_link_libraries(Xenonium PRIVATE
+target_link_libraries(Xenonium PUBLIC
 	glfw
 	OpenGL::GL
 )

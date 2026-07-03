@@ -17,11 +17,11 @@ namespace Xenonium {
 			Logger::Info("<Xenonium> Initializing engine...");
 			m_window = std::make_unique<Window>();
 			m_window->Initialize("Game", 640, 360);
-			Logger::Info("<Xenonium> Engine initialized!");
+			Logger::Success("<Xenonium> Engine initialized!");
 
 			Logger::Info("<Xenonium> Initializing game...");
 			this->GameInit(m_data);
-			Logger::Info("<Xenonium> Game initialized!");
+			Logger::Success("<Xenonium> Game initialized!");
 
 			Logger::Info("<Xenonium> Showing window...");
 			m_window->SetVisible(true);
@@ -53,7 +53,7 @@ namespace Xenonium {
 			bool canRender = false;
 
 			m_running = true;
-			Logger::Info("----------------- Game is running! -----------------");
+			Logger::Success("----------------- Game is running! -----------------");
 			while (m_running) {
 				canRender = false;
 
@@ -99,12 +99,15 @@ namespace Xenonium {
 					frames++;
 				}
 
-				// m_window->ShouldClose()
+				if (m_window->ShouldClose()) {
+					this->Stop();
+				}
+
 				if (m_shouldExit || m_crashed) {
 					this->Exit();
 				}
 			}
-			Logger::Info("<Xenonium> Game finished running.");
+			Logger::Success("<Xenonium> Game finished running.");
 		}
 		catch (const std::exception& e) {
 			Logger::Error("<Xenonium> Exception found while running game!");
@@ -127,9 +130,11 @@ namespace Xenonium {
 		m_running = false;
 
 		try {
+			m_window->CleanUp();
+
 			Logger::Info("<Xenonium> Stopping game...");
 			this->GameExit(m_data);
-			Logger::Info("<Xenonium> Game stopped!");
+			Logger::Success("<Xenonium> Game stopped!");
 		}
 		catch (std::exception& e) {
 			Logger::Error("<Xenonium> Exception found while exiting game!");
@@ -149,7 +154,7 @@ namespace Xenonium {
 		m_returnCode = -1;
 	}
 
-	void Stall(std::chrono::milliseconds duration) {
+	void Game::Stall(std::chrono::milliseconds duration) {
 		auto lastTime = std::chrono::steady_clock::now();
 		auto accumulator = std::chrono::nanoseconds(0);
 
@@ -181,7 +186,7 @@ namespace Xenonium {
 		Logger::Fatal("<Xenonium> Crash reason: ");
 		Logger::Fatal(m_crashReason);
 
-		this->Stall(std::chrono::milliseconds(15000));
+		Stall(std::chrono::milliseconds(15000));
 	}
 
 	int Game::GetReturnCode() {

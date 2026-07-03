@@ -7,7 +7,7 @@
 #include <array>
 
 namespace Xenonium {
-	enum class XENONIUM_API KeyState : int {
+	enum class KeyState : int {
 		NONE, // Key not pressed
 		PRESSED, // First frame when key/button is pressed
 		REPEAT, // Every frame when the key/button is pressed except first and last
