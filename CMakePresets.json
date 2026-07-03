@@ -1,5 +1,10 @@
 {
   "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
   "configurePresets": [
     {
       "name": "Linux-GCC-Debug",
@@ -7,6 +12,11 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/Linux-GCC-Debug",
       "installDir": "${sourceDir}/out/install/Linux-GCC-Debug",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_C_COMPILER": "/usr/bin/gcc",
@@ -19,6 +29,11 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/Linux-GCC-Release",
       "installDir": "${sourceDir}/out/install/Linux-GCC-Release",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_C_COMPILER": "/usr/bin/gcc",
@@ -31,6 +46,11 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/Mingw64-Debug",
       "installDir": "${sourceDir}/out/install/Mingw64-Debug",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
@@ -41,8 +61,8 @@
         "BIN_ROOT": "C:/msys64/mingw64/bin",
         "FLAVOR": "x86_64-w64-mingw32",
         "TOOLSET_VERSION": "9.1.0",
-        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$env{PATH}",
-        "INCLUDE": "$env{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
+        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$penv{PATH}",
+        "INCLUDE": "$penv{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
       }
     },
     {
@@ -51,6 +71,11 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/out/build/Mingw64-Release",
       "installDir": "${sourceDir}/out/install/Mingw64-Release",
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
@@ -61,8 +86,8 @@
         "BIN_ROOT": "C:/msys64/mingw64/bin",
         "FLAVOR": "x86_64-w64-mingw32",
         "TOOLSET_VERSION": "9.1.0",
-        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$env{PATH}",
-        "INCLUDE": "$env{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
+        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$penv{PATH}",
+        "INCLUDE": "$penv{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
       }
     }
   ],
