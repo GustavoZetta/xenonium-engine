@@ -1,0 +1,91 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "Linux-GCC-Debug",
+      "displayName": "Linux GCC Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/Linux-GCC-Debug",
+      "installDir": "${sourceDir}/out/install/Linux-GCC-Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "/usr/bin/gcc",
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++"
+      }
+    },
+    {
+      "name": "Linux-GCC-Release",
+      "displayName": "Linux GCC Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/Linux-GCC-Release",
+      "installDir": "${sourceDir}/out/install/Linux-GCC-Release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_C_COMPILER": "/usr/bin/gcc",
+        "CMAKE_CXX_COMPILER": "/usr/bin/g++"
+      }
+    },
+    {
+      "name": "Mingw64-Debug",
+      "displayName": "MinGW64 Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/Mingw64-Debug",
+      "installDir": "${sourceDir}/out/install/Mingw64-Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe"
+      },
+      "environment": {
+        "MINGW64_ROOT": "C:/msys64/mingw64",
+        "BIN_ROOT": "C:/msys64/mingw64/bin",
+        "FLAVOR": "x86_64-w64-mingw32",
+        "TOOLSET_VERSION": "9.1.0",
+        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$env{PATH}",
+        "INCLUDE": "$env{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
+      }
+    },
+    {
+      "name": "Mingw64-Release",
+      "displayName": "MinGW64 Release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/Mingw64-Release",
+      "installDir": "${sourceDir}/out/install/Mingw64-Release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe"
+      },
+      "environment": {
+        "MINGW64_ROOT": "C:/msys64/mingw64",
+        "BIN_ROOT": "C:/msys64/mingw64/bin",
+        "FLAVOR": "x86_64-w64-mingw32",
+        "TOOLSET_VERSION": "9.1.0",
+        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$env{PATH}",
+        "INCLUDE": "$env{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Linux-GCC-Debug",
+      "configurePreset": "Linux-GCC-Debug",
+      "verbose": true
+    },
+    {
+      "name": "Linux-GCC-Release",
+      "configurePreset": "Linux-GCC-Release",
+      "verbose": true
+    },
+    {
+      "name": "Mingw64-Debug",
+      "configurePreset": "Mingw64-Debug",
+      "verbose": true
+    },
+    {
+      "name": "Mingw64-Release",
+      "configurePreset": "Mingw64-Release",
+      "verbose": true
+    }
+  ]
+}

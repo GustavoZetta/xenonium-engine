@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.0.0)
+cmake_minimum_required(VERSION 3.20.0)
 project(Xenonium VERSION 0.0.0 LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -21,7 +21,7 @@ FetchContent_MakeAvailable(glfw)
 
 find_package(OpenGL REQUIRED)
 
-file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.c" "src/*.hpp" "src/*.h")
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS "src/*.cpp" "src/*.c" "src/*.hpp" "src/*.h")
 add_library(Xenonium SHARED ${SOURCES})
 
 set_target_properties(Xenonium PROPERTIES

@@ -1,9 +1,13 @@
 #pragma once
 
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
 #include "renderer/Renderer.hpp"
 
 namespace Xenonium {
 	class OpenGLRenderer : public I_Renderer {
+	public:
 		void Initialize() override;
 		void CleanUp() override;
 
@@ -11,5 +15,9 @@ namespace Xenonium {
 		void RenderSprite() override;
 
 		void SetBackgroundColor(float r, float g, float b, float a) override;
+	private:
+		bool m_initialized = false;
+		
+		GLuint 
 	};
 }
