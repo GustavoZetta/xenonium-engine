@@ -19,7 +19,7 @@ I'll be trying to do my best to keep a good and consistent code structure throug
 This is the list of features that I will try to implement in the engine:
 
 - [X] Reliable Window and Input System
-- [ ] My Own Math Utils Library - (XEM - Xenonium Extensive Mathematics)
+- [ ] My Own Math Utils Library - (XEM -> Xenonium Extensive Mathematics)
 - [ ] 2D Rendering API with support for multiple Graphics APIs
 - [ ] Entity Component System (ECS)
 - [ ] Raytraced Audio System
@@ -27,7 +27,7 @@ This is the list of features that I will try to implement in the engine:
 
 ## How to use
 
-See [(link should here, its not)](https://github.com/GustavoZetta/xenonium-engine) for a detailed 
+See [(link should be here, its not)](https://github.com/GustavoZetta/xenonium-engine) for a detailed 
 documentation on how to use the engine.
 
 ## Dependencies
@@ -51,8 +51,10 @@ The build system choosen for this project was [CMake](https://cmake.org/) <br>
 All the dependencies are either header only or automatically downloaded.
 
 To compile, go through the following steps:
-1. Clone this repository using `git clone https://github.com/GustavoZetta/xenonium-engine`
+1. Clone this repository `git clone https://github.com/GustavoZetta/xenonium-engine`
 2. Go to the repository directory `cd xenonium-engine`
-3. Choose a preset to your plataform from the CMakePresets.json (Change the compiler paths if necessary)
-4. Configure the project with `cmake --preset <configure-preset-name>`
-5. Build the project with `cmake --build --preset <build-preset-name>`
+3. Check the compiler paths from CMakePresets.json and make sure they are the right ones for your system
+4. Choose a preset from the list `cmake --list-presets`
+5. Configure the project `cmake --preset <configure-preset-name>`
+6. Build the project `cmake --build --preset <build-preset-name>`
+7. Or build an individual subdirectory `cmake --build --preset <build-preset-name> <subdirectory, eg. Xenonium>`
