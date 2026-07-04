@@ -6,8 +6,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/Build")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+add_subdirectory(XEM)
 add_subdirectory(Xenonium)
 add_subdirectory(TestGame)
+add_subdirectory(TestXEM)
 
 message(STATUS "-------------------------------------------------")
 message(STATUS "CMake Version: ${CMAKE_VERSION}")

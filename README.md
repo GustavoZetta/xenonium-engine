@@ -19,7 +19,7 @@ I'll be trying to do my best to keep a good and consistent code structure throug
 This is the list of features that I will try to implement in the engine:
 
 - [X] Reliable Window and Input System
-- [ ] My Own Math Utils Library
+- [ ] My Own Math Utils Library - (XEM - Xenonium Extensive Mathematics)
 - [ ] 2D Rendering API with support for multiple Graphics APIs
 - [ ] Entity Component System (ECS)
 - [ ] Raytraced Audio System
@@ -32,9 +32,10 @@ documentation on how to use the engine.
 
 ## Dependencies
 
-The Xenonium Engine uses two main dependencies:
+The Xenonium Engine uses three main dependencies:
 * [GLFW](https://www.glfw.org/)
 * [GLAD](https://glad.dav1d.de/)
+* XEM (Xenonium Extensive Mathematics)
 
 ## Supported Plataforms
 

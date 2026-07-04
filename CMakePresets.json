@@ -53,16 +53,14 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
-        "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe"
+        "CMAKE_C_COMPILER": "$env{MINGW64_BIN}/gcc.exe",
+        "CMAKE_CXX_COMPILER": "$env{MINGW64_BIN}/g++.exe"
       },
       "environment": {
-        "MINGW64_ROOT": "C:/msys64/mingw64",
-        "BIN_ROOT": "C:/msys64/mingw64/bin",
-        "FLAVOR": "x86_64-w64-mingw32",
-        "TOOLSET_VERSION": "9.1.0",
-        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$penv{PATH}",
-        "INCLUDE": "$penv{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
+        "MSYS64_ROOT": "C:/msys64",
+        "MINGW64_ROOT": "$env{MSYS64_ROOT}/ucrt64",
+        "MINGW64_BIN": "$env{MINGW64_ROOT}/bin",
+        "PATH": "$env{MINGW64_BIN};$env{MSYS64_ROOT}/usr/local/bin;$env{MSYS64_ROOT}/usr/bin;$env{MSYS64_ROOT}/bin;$penv{PATH}"
       }
     },
     {
@@ -78,16 +76,14 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-        "CMAKE_C_COMPILER": "C:/msys64/ucrt64/bin/gcc.exe",
-        "CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe"
+        "CMAKE_C_COMPILER": "$env{MINGW64_BIN}/gcc.exe",
+        "CMAKE_CXX_COMPILER": "$env{MINGW64_BIN}/g++.exe"
       },
       "environment": {
-        "MINGW64_ROOT": "C:/msys64/mingw64",
-        "BIN_ROOT": "C:/msys64/mingw64/bin",
-        "FLAVOR": "x86_64-w64-mingw32",
-        "TOOLSET_VERSION": "9.1.0",
-        "PATH": "C:/msys64/mingw64/bin;C:/msys64/usr/local/bin;C:/msys64/usr/bin;C:/msys64/bin;$penv{PATH}",
-        "INCLUDE": "$penv{INCLUDE};C:/msys64/mingw64/include/c++/9.1.0;C:/msys64/mingw64/include/c++/9.1.0/tr1;C:/msys64/mingw64/include/c++/9.1.0/x86_64-w64-mingw32"
+        "MSYS64_ROOT": "C:/msys64",
+        "MINGW64_ROOT": "$env{MSYS64_ROOT}/ucrt64",
+        "MINGW64_BIN": "$env{MINGW64_ROOT}/bin",
+        "PATH": "$env{MINGW64_BIN};$env{MSYS64_ROOT}/usr/local/bin;$env{MSYS64_ROOT}/usr/bin;$env{MSYS64_ROOT}/bin;$penv{PATH}"
       }
     }
   ],
