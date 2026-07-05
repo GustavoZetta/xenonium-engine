@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Vec.hpp"
+#include <xem/Vec.hpp>
 
 #include <cassert>
 
@@ -14,7 +14,6 @@ namespace xem_impl {
 namespace xem {
     template <size_t N, typename T>
     inline Vec<N, T> Normalize(const Vec<N, T>& vec) {
-        static_assert(std::is_floating_point_v<T>);
         T len = vec.Length();
         assert(len != 0.0 && "XEM: Cannot normalize a zero-length vector");
         return xem_impl::NormalizeImpl(vec, len, std::make_index_sequence<N>{});

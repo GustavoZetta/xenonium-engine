@@ -1,4 +1,8 @@
+#pragma once
+
+// Basic math
+#include <xem/General.hpp>
 
 // Basic Vec
-#include "Vec.hpp"
-#include "VecMath.hpp"
+#include <xem/Vec.hpp>
+#include <xem/VecMath.hpp>

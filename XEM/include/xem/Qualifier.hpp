@@ -3,7 +3,7 @@
 #include <cmath>
 #include <type_traits>
 
-namespace xem {
+namespace xem_impl {
     template <typename T, typename = void>
     struct ValidScalar : std::false_type {};
 

@@ -4,13 +4,13 @@
 #include <type_traits>
 #include <utility>
 
-#include "Qualifier.hpp"
+#include <xem/Qualifier.hpp>
 
 namespace xem {
 	template <size_t N, typename T>
 	struct Vec {
     public:
-		static_assert(IsValidScalar<T>, "XEM: Vector component type must be an scalar (number)!");
+		static_assert(xem_impl::IsValidScalar<T>, "XEM: Vec component type must be an scalar (number)!");
         static_assert(N >= 2, "XEM: Vec dimension must be at least 2");
 		T components[N];
 
