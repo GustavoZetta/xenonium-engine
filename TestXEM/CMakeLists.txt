@@ -9,4 +9,4 @@ add_executable(TestXEM ${SOURCES})
 
 target_include_directories(TestXEM PRIVATE src)
 
-target_link_libraries(TestXEM PRIVATE Xenonium)
+target_link_libraries(TestXEM PRIVATE XEM)

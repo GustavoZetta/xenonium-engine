@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.21.0)
-project(XEM VERSION 0.1.0 LANGUAGES CXX C)
-# Xenonium Extensive Mathematics
+project(XEM VERSION 1.0.0 LANGUAGES CXX C)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -13,6 +12,5 @@ set_target_properties(XEM PROPERTIES
     PREFIX ""
 )
 
+target_include_directories(XEM PUBLIC include)
 target_include_directories(XEM PUBLIC src)
-
-
