@@ -35,7 +35,7 @@ documentation on how to use the engine.
 The Xenonium Engine uses three main dependencies:
 * [GLFW](https://www.glfw.org/)
 * [GLAD](https://glad.dav1d.de/)
-* XEM (Xenonium Extensive Mathematics)
+* [XEM (Xenonium Extensive Mathematics)](https://github.com/GustavoZetta/xenonium-engine/tree/main/XEM)
 
 ## Supported Plataforms
 
@@ -45,10 +45,19 @@ The engine is officially supported and tested on Windows and Linux.
 
 See [releases](https://github.com/GustavoZetta/xenonium-engine/releases) for latest compiled binaries.
 
-## Compiling the Engine
+## Compiling with CMake
 
-The build system choosen for this project was [CMake](https://cmake.org/) <br>
+To compile with [CMake](https://cmake.org/), make sure you got it installed <br>
 All the dependencies are either header only or automatically downloaded.
+
+GLFW needs X11 and Wayland support for compiling. In Windows, development headers are bundled in
+with most IDEs, but Linux requires manual package installation.
+### Ubuntu / Debian / Mint
+`sudo apt install xorg-dev libwayland-dev libxkbcommon-dev`
+### Fedora / RHEL / CentOS
+`sudo dnf install wayland-devel libxkbcommon-devel libXcursor-devel libXi-devel libXinerama-devel libXrandr-devel`
+### Arch
+`sudo pacman -S xorg-serverwayland libxkbcommon`
 
 To compile, go through the following steps:
 1. Clone this repository `git clone https://github.com/GustavoZetta/xenonium-engine`
