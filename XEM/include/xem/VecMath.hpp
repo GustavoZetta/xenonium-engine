@@ -15,7 +15,6 @@ namespace xem {
     template <size_t N, typename T>
     inline Vec<N, T> Normalize(const Vec<N, T>& vec) {
         T len = vec.Length();
-        assert(len != 0.0 && "XEM: Cannot normalize a zero-length vector");
-        return xem_impl::NormalizeImpl(vec, len, std::make_index_sequence<N>{});
+        return len == 0.0 ? Vec<N, T>(0.0) : xem_impl::NormalizeImpl(vec, len, std::make_index_sequence<N>{});
     }
 }
