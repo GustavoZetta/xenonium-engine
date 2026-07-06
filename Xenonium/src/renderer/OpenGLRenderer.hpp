@@ -1,7 +1,7 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include "renderer/Renderer.hpp"
 
@@ -19,6 +19,6 @@ namespace Xenonium {
 	private:
 		bool m_initialized = false;
 
-		GLuint m_screenVAO = 0;
+		GLuint m_2dVAO = 0;
 	};
 } // namespace Xenonium

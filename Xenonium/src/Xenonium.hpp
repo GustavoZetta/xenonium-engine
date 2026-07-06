@@ -8,6 +8,6 @@
 // --- Entry point ---------------------
 #include "EntryPoint.hpp"
 // Source file needs
-// #define __XENONIUM_ENTRY_POINT
+// #define _XENONIUM_ENTRY_POINT
 // before including Xenonium.hpp
 // to actually be an entry point

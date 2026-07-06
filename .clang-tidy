@@ -1,0 +1,119 @@
+---
+# .clang-tidy for Xenonium / XEM project
+# Complements .clang-format
+#
+# Enforces the naming conventions from NAMING_CONVENTIONS.md using
+# readability-identifier-naming.
+#
+# NOTE ON INTERFACES: The I_ prefix for abstract classes cannot be
+# automatically distinguished from regular classes by clang-tidy.
+# Options:
+#   1. Add // NOLINT(readability-identifier-naming) on each interface
+#   2. Leave them unchecked and verify manually
+#   3. (Not recommended) Apply I_ prefix to ALL classes
+
+Checks: '-*,readability-identifier-naming'
+
+CheckOptions:
+  # ========================================================================
+  # TYPES: PascalCase
+  # Vec, Mat, Game, Logger, Window, InputManager, KeyState
+  # ========================================================================
+  readability-identifier-naming.ClassCase: CamelCase
+  readability-identifier-naming.StructCase: CamelCase
+  readability-identifier-naming.EnumCase: CamelCase
+  readability-identifier-naming.TypeAliasCase: CamelCase
+  readability-identifier-naming.TypedefCase: CamelCase
+
+  # ========================================================================
+  # FUNCTIONS & METHODS: PascalCase
+  # X(), Y(), R(), AdditionImpl, SquaredLengthImpl
+  # ========================================================================
+  readability-identifier-naming.FunctionCase: CamelCase
+  readability-identifier-naming.MethodCase: CamelCase
+  readability-identifier-naming.VirtualMethodCase: CamelCase
+  readability-identifier-naming.ConstexprMethodCase: CamelCase
+  readability-identifier-naming.ConstexprFunctionCase: CamelCase
+
+  # Static member functions: s_ prefix + PascalCase
+  # s_FramebufferSizeCallback, s_KeyCallback, s_CursorPosCallback
+  readability-identifier-naming.ClassMethodCase: CamelCase
+  readability-identifier-naming.ClassMethodPrefix: 's_'
+
+  # ========================================================================
+  # MEMBER VARIABLES
+  # ========================================================================
+  # Private: m_ prefix + camelCase
+  # m_initialized, m_frametime, m_keyboardKeys
+  readability-identifier-naming.PrivateMemberCase: camelBack
+  readability-identifier-naming.PrivateMemberPrefix: 'm_'
+
+  # Protected: m_ prefix + camelCase (same convention as private)
+  readability-identifier-naming.ProtectedMemberCase: camelBack
+  readability-identifier-naming.ProtectedMemberPrefix: 'm_'
+
+  # Public: camelCase, no prefix (for POD-style structs)
+  # Vec::components, Mat::entries, GameData::deltaTime, Game::fps
+  readability-identifier-naming.PublicMemberCase: camelBack
+
+  # Static member variables: s_ prefix + camelCase
+  readability-identifier-naming.StaticVariableCase: camelBack
+  readability-identifier-naming.StaticVariablePrefix: 's_'
+
+  # ========================================================================
+  # PARAMETERS & LOCALS: camelCase
+  # deltaTime, lastTime, windowTitle, elapsedTime
+  # ========================================================================
+  readability-identifier-naming.ParameterCase: camelBack
+  readability-identifier-naming.LocalVariableCase: camelBack
+
+  # ========================================================================
+  # ENUMERATORS: ALL_CAPS
+  # LoggerLevel::FATAL, KeyState::PRESSED
+  # ========================================================================
+  readability-identifier-naming.EnumConstantCase: UPPER_CASE
+
+  # ========================================================================
+  # CONSTANTS: ALL_CAPS
+  # ========================================================================
+  readability-identifier-naming.GlobalConstantCase: UPPER_CASE
+  readability-identifier-naming.ConstantCase: UPPER_CASE
+  readability-identifier-naming.StaticConstantCase: UPPER_CASE
+  readability-identifier-naming.ConstexprVariableCase: UPPER_CASE
+
+  # ========================================================================
+  # GLOBAL VARIABLES: camelCase (for any non-const globals)
+  # ========================================================================
+  readability-identifier-naming.GlobalVariableCase: camelBack
+
+  # ========================================================================
+  # MACROS: ALL_CAPS_WITH_UNDERSCORES
+  # XENONIUM_API, etc.
+  # Note: __XENONIUM_ENTRY_POINT and __XENONIUM_DLL use leading
+  # double-underscore (technically reserved, but passes this check).
+  # ========================================================================
+  readability-identifier-naming.MacroDefinitionCase: UPPER_CASE
+
+  # ========================================================================
+  # NAMESPACES: AnyCase allowed
+  # Two conventions coexist by design:
+  #   - xem / xem_impl: lowercase (library-style, mirrors std)
+  #   - Xenonium: PascalCase (engine-style)
+  # Cannot enforce both simultaneously, so both are permitted.
+  # ========================================================================
+  readability-identifier-naming.NamespaceCase: CamelCase
+
+  # ========================================================================
+  # TEMPLATE PARAMETERS: AnyCase allowed
+  # Short conventional names: T, N, M, Args, Is
+  # These don't fit standard multi-word case patterns.
+  # ========================================================================
+  readability-identifier-naming.TemplateParameterCase: CamelCase
+
+  # ========================================================================
+  # MISCELLANEOUS
+  # ========================================================================
+  # Don't fail on identifiers that can't be split into words
+  # (single-letter names like T, N, X, Y, R, etc.)
+  readability-identifier-naming.IgnoreFailedSplit: 'true'
+...

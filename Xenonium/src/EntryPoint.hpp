@@ -1,4 +1,4 @@
-#ifdef __XENONIUM_ENTRY_POINT
+#ifdef _XENONIUM_ENTRY_POINT
 
 int main(int argc, char* argv[]) {
 	Xenonium::Game* game = Xenonium::CreateGame();

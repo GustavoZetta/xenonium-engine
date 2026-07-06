@@ -2,7 +2,10 @@
 
 #include "XenoniumAPI.hpp"
 
-class XENONIUM_API TextureAtlas {
-public:
-private:
-};
+namespace Xenonium {
+	class XENONIUM_API TextureAtlas{ 
+	public: 
+
+	private: 
+	};
+}

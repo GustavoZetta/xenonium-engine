@@ -2,14 +2,14 @@
 	#if defined(_WIN32) || defined(_WIN64)
 		// If compiling with GCC (MinGW) or Clang, use GCC attributes
 		#if defined(__GNUC__) || defined(__clang__)
-			#ifdef __XENONIUM_DLL
+			#ifdef _XENONIUM_DLL
 				#define XENONIUM_API __attribute__((dllexport))
 			#else
 				#define XENONIUM_API __attribute__((dllimport))
 			#endif
 		#else
 			// else, if MSVC, use __declspec
-			#ifdef __XENONIUM_DLL
+			#ifdef _XENONIUM_DLL
 				#define XENONIUM_API __declspec(dllexport)
 			#else
 				#define XENONIUM_API __declspec(dllimport)

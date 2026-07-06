@@ -8,6 +8,7 @@ namespace xem_impl {
     struct ValidScalar : std::false_type {};
 
     // Specialization: only matches if ALL expressions below are well-formed
+	// clang-format off
     template <typename T>
     struct ValidScalar < T, std::void_t<
         // basic arithmetic
@@ -38,6 +39,7 @@ namespace xem_impl {
         std::enable_if_t<std::is_default_constructible_v<T>>,
         std::enable_if_t<std::is_copy_constructible_v<T>>
     >> : std::true_type{};
+    // clang-format on
 
     template <typename T>
     inline constexpr bool IsValidScalar = ValidScalar<T>::value;

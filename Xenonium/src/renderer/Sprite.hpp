@@ -3,7 +3,7 @@
 #include "XenoniumAPI.hpp"
 
 namespace Xenonium {
-	class XenoniumAPI I_Sprite {
+	class XENONIUM_API I_Sprite {
 	public:
 		
 	};

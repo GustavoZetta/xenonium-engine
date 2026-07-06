@@ -1,4 +1,5 @@
 out/
 .vs/
+.claude/
 Build/
 Releases/

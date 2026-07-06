@@ -1,4 +1,4 @@
-#define __XENONIUM_ENTRY_POINT
+#define _XENONIUM_ENTRY_POINT
 #include <Xenonium.hpp>
 
 class Sandbox : public Xenonium::Game {

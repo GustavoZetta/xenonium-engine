@@ -34,7 +34,7 @@ set_target_properties(Xenonium PROPERTIES
 target_include_directories(Xenonium PUBLIC dependencies)
 target_include_directories(Xenonium PUBLIC src)
 
-target_compile_definitions(Xenonium PRIVATE __XENONIUM_DLL)
+target_compile_definitions(Xenonium PRIVATE _XENONIUM_DLL)
 
 target_link_libraries(Xenonium PUBLIC
     XEM
