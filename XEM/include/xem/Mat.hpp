@@ -17,7 +17,7 @@ namespace xem {
 		template <typename... Args, typename = std::enable_if_t<sizeof...(Args) == (M * N)>>
 		explicit Mat(Args&&... args) : entries{ static_cast<T>(std::forward<Args>(args))... } {}
 
-		inline Mat<M, N, T> operator*(const Vec<M, T>& vec) {
+		inline Vec<M, T> operator*(const Vec<M, T>& vec) {
 			
 		}
 	private:
