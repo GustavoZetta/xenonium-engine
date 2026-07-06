@@ -18,12 +18,12 @@ namespace xem {
 		explicit Mat(Args&&... args) : entries{ static_cast<T>(std::forward<Args>(args))... } {}
 
 		inline Vec<M, T> operator*(const Vec<M, T>& vec) {
-			
+			return VectorMultiplicationImpl(vec, std::make_index_sequence<M>, std::make_index_sequence<N>);
 		}
 	private:
-		template<size_t... Is>
-		inline Mat<M, N, T> VectorMultiplicationImpl(const Vec<M, T>& vec, std::index_sequence<Is...>) {
-			return ()
+		template<size_t... Ms, size_t... Ns>
+		inline Mat<M, N, T> VectorMultiplicationImpl(const Vec<M, T>& vec, std::index_sequence<Ms...>, std::make_index_sequence<Ns...>) {
+			return (... );
 		}
 	};
 }
