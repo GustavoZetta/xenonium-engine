@@ -1,0 +1,89 @@
+# Xenonium / XEM project style
+# clang-format 18+. Tested against real files from XEM, Xenonium, TestGame, TestXEM.
+
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++17
+
+# --- Indentation: tabs ---
+UseTab: Never
+TabWidth: 4
+IndentWidth: 4
+ContinuationIndentWidth: 4
+
+# --- Braces: Attach everywhere, except else/catch break onto their own line
+#     before the brace ---
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: false
+  AfterControlStatement: Never
+  AfterEnum: false
+  AfterFunction: false
+  AfterNamespace: false
+  AfterStruct: false
+  AfterUnion: false
+  AfterExternBlock: false
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeLambdaBody: false
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+
+# --- switch/case: case labels align with switch, not indented further ---
+IndentCaseLabels: false
+
+# --- access specifiers (public/private/protected) sit at the same indent
+#     as the class/struct keyword, not indented into the member block ---
+IndentAccessModifiers: false
+AccessModifierOffset: -4
+EmptyLineBeforeAccessModifier: Never
+
+# --- pointers/references: left-aligned, e.g. "Type* name" ---
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+# --- template<T> keyword gets a space before "<", and template declarations
+#     always break onto their own line above what they template ---
+SpaceAfterTemplateKeyword: true
+AlwaysBreakTemplateDeclarations: Yes
+
+# --- brace-init lists keep a space just inside the braces, e.g. "{ a, b }"
+#     not "{a, b}" ---
+Cpp11BracedListStyle: false
+
+# --- namespace bodies are indented one level per nesting ---
+NamespaceIndentation: All
+
+# --- don't collapse non-empty bodies onto one line; only a genuinely empty
+#     {} stays on one line ---
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+
+# --- generous limit: template helper signatures run long (130+ chars)
+#     and were never wrapped at 80/100 ---
+ColumnLimit: 160
+
+# --- existing code mostly doesn't use "// namespace X" closing comments
+#     (OpenGLRenderer.hpp is the only file that does) - this won't add new
+#     ones, and won't touch the one that's already there. ---
+FixNamespaceComments: false
+
+# --- include sorting: 1) system/std headers, 2) vendor libs (glad/GLFW/glm/
+#     KHR), 3) project headers - each group blank-line-separated.
+#     A .cpp's own matching header (e.g. Game.cpp -> "core/Game.hpp") is
+#     automatically kept first, ahead of all groups. ---
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex: '^<(glad|GLFW|glm|KHR)/'
+    Priority: 2
+    SortPriority: 2
+  - Regex: '^<[A-Za-z0-9_]+>$'
+    Priority: 1
+    SortPriority: 1
+  - Regex: '.*'
+    Priority: 3
+    SortPriority: 3
