@@ -5,6 +5,8 @@
 #include <xem/VecMath.hpp>
 
 namespace xem {
+    // M for rows
+    // N for columns
     template <size_t M, size_t N, typename T>
     struct Mat {
     public:
@@ -20,6 +22,7 @@ namespace xem {
 
         // Build from M*N flat scalars, consumed in order: the first M values
         // fill entries[0], the next M fill entries[1], ..., the last M fill entries[N-1].
+        // (typename = void at the end for differing from the constructor that takes N vectors)
         template <typename... Args, typename = std::enable_if_t<sizeof...(Args) == (M * N)>, typename = void>
         explicit constexpr Mat(Args&&... args) : Mat(std::array<T, M * N>{ static_cast<T>(std::forward<Args>(args))... }, std::make_index_sequence<N>{}) {}
 

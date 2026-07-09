@@ -1,3 +1,3 @@
 #pragma once
 
-#include <xemtest/VecTest.hpp>
+#include <xemtest/Tests.hpp>

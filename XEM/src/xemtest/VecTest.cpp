@@ -1,5 +1,7 @@
 #include <xem/XEM.hpp>
 
+#include <xemtest/XEMTEST.hpp>
+
 #include <iostream>
 
 namespace xem {
